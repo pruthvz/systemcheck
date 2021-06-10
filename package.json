@@ -1,0 +1,14 @@
+{
+  "name": "projectspate",
+  "version": "1.0.0",
+  "description": "project one",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Pruthvi Mohanlal",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^8.2.1"
+  }
+}

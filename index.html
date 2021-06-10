@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Spate</title>
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/cosmo/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <!-- <h4>First Application</h4> -->
+    <br />
+    <div class="container">
+      <h1 style="text-align: center;">Computer Info App</h1>
+      <br />
+      <div id="output"></div>
+    </div>
+  </body>
+  <script>
+    console.log(process);
+    let output = `
+        <h3 class="page-header">App Version Data</h3>
+        <ul class="list-group">
+            <li class="list-group-item"> Node: ${process.versions.node}</li>
+            <li class="list-group-item"> Chrome: ${process.versions.chrome}</li>
+            <li class="list-group-item"> Electron: ${
+              process.versions.electron
+            }</li>
+        </ul>   
+        <br>
+        <h3 class="page-header">System Specs</h3>
+        <ul class="list-group">
+            <li class="list-group-item"> System Architecture: ${
+              process.arch
+            }</li>
+            <li class="list-group-item"> Processor Identifier: ${
+              process.env.PROCESSOR_IDENTIFIER
+            }</li>
+            <li class="list-group-item"> Printer: ${process.env.PRINTER}</li>
+        </ul>  
+        <br>
+        <h3 class="page-header">System Memory</h3>
+        <ul class="list-group">
+            <li class="list-group-item"> Total: ${
+              process.getSystemMemoryInfo().total
+            }</li>
+            <li class="list-group-item"> Free: ${
+              process.getSystemMemoryInfo().free
+            }</li>
+            <li class="list-group-item"> Swap Tool: ${
+              process.getSystemMemoryInfo().sawpTotal
+            }</li>
+            <li class="list-group-item"> Swap Free: ${
+              process.getSystemMemoryInfo().sawpFree
+            }</li>
+        </ul> 
+        <br>
+    `;
+    document.getElementById("output").innerHTML = output;
+  </script>
+
+  <script>
+    require("./renderer.js");
+  </script>
+</html>
